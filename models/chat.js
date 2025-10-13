@@ -1,0 +1,29 @@
+const mongoose = require("mongoose");
+
+// Schema validation
+const chatSchema = new mongoose.Schema({
+  from: {
+    type: String,
+    required: true,
+  },
+  to: {
+    type: String,
+    required: true,
+  },
+  msg: {
+    type: String,
+  },
+  createdAt: {
+    type: Date,
+    required: true,
+  },
+   updatedAt: {
+    type: Date
+  }
+});
+
+// model
+
+const Chat = mongoose.model("Chat",chatSchema);
+
+module.exports= Chat;
