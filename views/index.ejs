@@ -116,8 +116,8 @@
           <form method="GET" action="/chats/<%= ch._id %>/edit">
             <button>Edit</button>
           </form>
-          <form method="GET" action="/chats/<%= ch._id %>">
-            <button>Delete</button>
+          <form method="POST" action="/chats/<%= ch._id %>?_method=DELETE">
+            <button type="submit">Delete</button>
           </form>
         </div>
       <% } %>
