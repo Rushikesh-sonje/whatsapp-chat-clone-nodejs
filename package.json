@@ -1,12 +1,14 @@
+
 {
   "name": "expressmongo",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple chat application built using Express, MongoDB, and EJS.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "keywords": [],
+  "keywords": ["express", "mongo", "mongoose", "ejs", "chat-app"],
   "author": "Rushikesh Sonje",
   "license": "ISC",
   "dependencies": {
@@ -14,5 +16,9 @@
     "express": "^5.1.0",
     "method-override": "^3.0.0",
     "mongoose": "^8.19.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
+

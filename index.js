@@ -93,9 +93,10 @@ app.delete("/delete/:id",async(req,res)=>{
 
 
 // express setup
-app.get("/",(req,res)=>{
-    res.send("it is working");
-})
+app.get("/", (req, res) => {
+  res.redirect("/chats");
+});
+
 
 app.listen(8080,()=>{
     console.log("server is listening at 8080");
