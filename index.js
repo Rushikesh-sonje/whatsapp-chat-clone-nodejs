@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -18,7 +20,13 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/whatsapp");
+//   await mongoose.connect("mongodb://127.0.0.1:27017/whatsapp");  //local storage mongodb 
+
+
+//  await mongoose.connect("mongodb+srv://tryrushikeshsonje37_db_user:rTUD0SVWBx8QM7Qd@cluster0.pkya6uk.mongodb.net/whatsapp");
+
+await mongoose.connect(process.env.MONGO_URL);
+
 }
 
 // let chat1 = new Chat({
@@ -98,6 +106,11 @@ app.get("/", (req, res) => {
 });
 
 
-app.listen(8080,()=>{
-    console.log("server is listening at 8080");
-})
+// app.listen(8080,()=>{
+//     console.log("server is listening at 8080");
+// })
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
+module.exports = app; // ✅ required for Vercel
